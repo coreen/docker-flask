@@ -1,0 +1,14 @@
+{
+  "name": "docker-flask",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.5"
+  }
+}

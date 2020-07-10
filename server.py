@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 from flask.json import jsonify
 
 from pymongo import MongoClient
@@ -20,6 +20,11 @@ def healthcheck():
 			return jsonify(status='ok')
 	except ConnectionFailure:
 		return jsonify(status='unhealthy', mongo_connection='not connected')
+
+@app.route('/')
+def home():
+	# https://stackabuse.com/serving-static-files-with-flask/
+	return render_template('web/index.html')
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', port=5000, debug=True)
